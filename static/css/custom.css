@@ -1,0 +1,180 @@
+/* Custom overrides for avatar/profile image */
+
+/* Square avatar, crop to fill, centered, and square shape */
+aside div img, #aboutme img {
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  /* aspect-ratio: 1 / 1;  force square (width = height) */
+  object-fit: cover;   /* preserves aspect ratio & crops to fill */
+  border-radius: 4%;  /* 0% for square corners and other numbers for rounded corner*/
+  display: block;
+  margin: 0 auto;
+}
+
+/* Larger for high-density displays (use a 2x source image) */
+@media screen and (min-width: 768px) {
+  aside div img, #aboutme img {
+    width: 90%;
+    max-width: 1440px;
+  }
+}
+/* Display-name and sidebar info styling */
+.display-name { font-size: 1.4em; margin-top: 12px; font-weight:700; color:#000000; }
+.display-name a { color: inherit; text-decoration: none; }
+.display-name .surname { color: #000000; }
+.local-name { font-size: 0.95em; color:#666; margin-top:6px; }
+.role, .affiliation { font-size: 0.9em; color:#444; margin-top:8px; }
+.sidebar-about { margin-top:12px; color:#777; font-size:0.95em; text-align:center; padding: 0 10px; }
+
+/* Slightly reduce aside padding so the design matches the sample layout */
+aside div{ padding: 18px 12px; }
+
+/* Make the left sidebar white and adjust colors for readability */
+aside {
+  background-color: #ffffff;
+  color: #222;
+  border-right: 1px solid #eee; /* subtle divider */
+}
+
+/* Add a small lift to the avatar for contrast */
+aside div img { box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+
+/* Links and social icons in sidebar */
+aside a { color: #043e68; text-decoration: none; }
+aside a:hover { color: #155a8a; }
+aside .social a { filter: none; }
+
+/* Adjust sidebar text shades */
+aside .local-name, aside .role, aside .affiliation, aside .sidebar-about { color: #555; }
+
+@media screen and (min-width:768px){
+  aside{ width:25vw; }
+}
+
+/* Stylish bullet points for section headers */
+main article h2 {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+main article h2::before {
+  content: "▪";
+  color: #1e73be;
+  margin-right: 8px;
+  margin-left: 22px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* Unified link colors throughout the site */
+a {
+  color: #1e73be;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #155a8a;
+  text-decoration: underline;
+}
+
+main article a {
+  color: #1e73be;
+}
+
+main article a:hover {
+  color: #155a8a;
+  text-decoration: underline;
+}
+
+main nav a,
+main .translations a {
+  color: #1e73be;
+}
+
+main nav a:hover,
+main .translations a:hover {
+  color: #155a8a;
+}
+
+/* Remove right-side divider lines in the top nav */
+main nav a,
+main .translations a {
+  border-right: none;
+}
+
+main footer a {
+  color: #1e73be;
+}
+
+main footer a:hover {
+  color: #155a8a;
+}
+
+/* Paragraph spacing: use CSS variable --para-spacing for control */
+:root {
+  --para-spacing: 1.05rem; /* default spacing (change this value) */
+}
+
+main article p,
+main article ul,
+main article ol {
+  margin-top: 0;
+  margin-left: 40px;
+  margin-bottom: var(--para-spacing);
+  line-height: 1.6;
+}
+
+/* Sidebar custom HTML styling */
+.sidebar-custom { margin-top: 12px; color: #444; font-size: 0.95em; }
+.sidebar-custom a { color: #1e73be; }
+.sidebar-custom a:hover { color: #155a8a; text-decoration: underline; }
+:root {
+  --para-spacing: 1.05rem; /* default spacing (change this value) */
+}
+
+main article p,
+main article ul,
+main article ol {
+  margin-top: 0;
+  margin-left: 45px;
+  margin-bottom: var(--para-spacing);
+  line-height: 1.5;
+}
+
+/* Full-width content area (no max width, no side margins) */
+main article {
+  max-width: 1000px;
+  width: 80%;
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+/* Publications page: keep links black, no hover color shift */
+body.page-publications main article a,
+body.page-publications main article a:visited,
+body.page-publications main article a:hover,
+body.page-publications main article a:focus,
+body.page-publications main article a:active {
+  color: #000000;
+}
+
+body.page-about main article a,
+body.page-about main article a:visited,
+body.page-about main article a:hover,
+body.page-about main article a:focus,
+body.page-about main article a:active {
+  color: #000000;
+}
+
+/* Sidebar page titles: capitalize first letter */
+aside nav ul li {
+  text-transform: capitalize;
+}
+
+/* Highlight current page in sidebar */
+aside nav ul li.active > a {
+  font-weight: 700;
+  text-decoration: underline;
+}
