@@ -160,7 +160,7 @@ body.page-publications main article a:visited,
 body.page-publications main article a:hover,
 body.page-publications main article a:focus,
 body.page-publications main article a:active {
-  color: #000000;
+  color: #1200b3;
 }
 
 body.page-about main article a,
@@ -168,7 +168,7 @@ body.page-about main article a:visited,
 body.page-about main article a:hover,
 body.page-about main article a:focus,
 body.page-about main article a:active {
-  color: #000000;
+  color: #2f00ff;
 }
 
 /* Sidebar page titles: capitalize first letter */
